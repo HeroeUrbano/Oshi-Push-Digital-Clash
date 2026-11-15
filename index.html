@@ -2,35 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Oshi Push – site test</title>
-<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#111111">
+<title>Oshi Push – Digital Clash</title>
 <style>
-  body { margin: 0; background: #111; color: #eee; font-family: sans-serif; }
-  #root { padding: 16px; }
+  html, body { margin: 0; padding: 0; background: #111; }
+  #root { min-height: 100vh; }
+  #boot { color: #ccc; font-family: sans-serif; padding: 24px; }
 </style>
 </head>
 <body>
-<div id="root">Loading…</div>
-<script>
-  var e = React.createElement;
-  function App() {
-    var s = React.useState("loading…"), status = s[0], setStatus = s[1];
-    var color = status.indexOf("✅") === 0 ? "#3fb950" : status.indexOf("❌") === 0 ? "#f85149" : "#d29922";
-    return e("div", null,
-      e("h2", { style: { marginTop: 0 } }, "Oshi Push – site test"),
-      e("p", { style: { color: "#3fb950", fontWeight: 700 } }, "✅ React is running"),
-      e("p", { style: { color: color, fontWeight: 700 } }, "Card art: " + status),
-      e("img", {
-        src: "OP_PHC_001.png",
-        style: { maxWidth: "100%", maxHeight: 420, display: "block" },
-        onLoad: function (ev) { setStatus("✅ Loaded (" + ev.target.naturalWidth + "×" + ev.target.naturalHeight + ")"); },
-        onError: function () { setStatus("❌ Not found"); }
-      })
-    );
-  }
-  ReactDOM.createRoot(document.getElementById("root")).render(e(App));
-</script>
+<div id="root"><div id="boot">Loading Oshi Push…</div></div>
+<!-- Version v122. Bump the ?v= number on each update so phones don't use an old cached copy. -->
+<script src="app.js?v=122"></script>
 </body>
 </html>
